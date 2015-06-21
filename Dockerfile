@@ -14,7 +14,7 @@
 
 FROM registry-ice.ng.bluemix.net/ibmliberty
 #FROM ibmliberty
-MAINTAINER Nathan Fritze "nfritz@us.ibm.com"
+MAINTAINER Philippe Mulet "philippe_mulet@fr.ibm.com"
 
 # Setup logging
 RUN apt-get update &&\
@@ -37,9 +37,9 @@ COPY mt-logstash-forwarder.conf /etc/supervisor/conf.d/mt-logstash-forwarder.con
 # create the server
 #RUN bash -c "server create wordcounter"
 # Install the application
-ENV WEB_PORT 9080
-EXPOSE  9080
+ENV WEB_PORT 25565
+EXPOSE  25565
 
 # set this server as the default server for the liberty image
 ADD server.xml /opt/ibm/wlp/usr/servers/defaultServer/server.xml
-ADD wordcounter.war /opt/ibm/wlp/usr/servers/defaultServer/apps/wordcounter.war
+ADD mcpatched.war /opt/ibm/wlp/usr/servers/defaultServer/apps/mcpatched.war
