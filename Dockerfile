@@ -41,5 +41,5 @@ ENV WEB_PORT 25565
 EXPOSE  25565
 
 # set this server as the default server for the liberty image
-ADD server.xml /opt/ibm/wlp/usr/servers/defaultServer/server.xml
-ADD mcpatched.war /opt/ibm/wlp/usr/servers/defaultServer/apps/mcpatched.war
+# ADD server.xml /opt/ibm/wlp/usr/servers/defaultServer/server.xml
+ADD mcpatched.jar /opt/ibm/wlp/usr/servers/defaultServer/apps/mcpatched.jar
